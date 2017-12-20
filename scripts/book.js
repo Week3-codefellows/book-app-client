@@ -3,7 +3,7 @@
 var app = app || {};
 
 (function(module) {
-  //var __API_URL__ = 'http://localhost:3000';
+  // var __API_URL__ = 'http://localhost:3000';
   var __API_URL__ = 'https://cs-ea-booklist.herokuapp.com';
 
   function errorCallback(err) {
@@ -27,7 +27,13 @@ var app = app || {};
     $.get(`${__API_URL__}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
-      .catch(errorCallback)
+      .catch(errorCallback);
+
+  Book.fetchOne = callback =>
+    $.get(`${__API_URL__}/api/v1/books/:id`)
+      .then(Book.loadAll)
+      .then(callback)
+      .catch(errorCallback);
 
   module.Book = Book
 })(app)
