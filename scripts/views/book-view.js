@@ -1,9 +1,9 @@
 'use strict'
 
 // Application Dependencies
-const express = require('express')
-const cors = require('cors')
-const pg = require('pg')
+const express = require('express');
+const cors = require('cors');
+const pg = require('pg');
 
 // App Setup
 const app = express()
