@@ -9,7 +9,6 @@ var app = app || {};
     $('.container').hide()
     $('.book-view').show()
     module.Book.all.map(book => $('#book-list').append(book.toHtml()))
-    $('#book-list').show();
   }
 
   module.bookView = bookView
