@@ -19,10 +19,11 @@
         <img src={{image_url}}>
         <div>
           <h2>{{title}}</h2>
-          <p>{{author}}</p>
+          <h2>{{author}}</h2>
         </div>
       </div>
     </li>
+    <button type = "onsubmit">view details</button>
   </script>
 </head>
 <body>
@@ -46,17 +47,18 @@
     <section class="book-view container">
       <h2 class="view-title">My Books</h2>
       <section class="book-list">
-        <ul id="book-list"></ul>
+       
       </section>
+      <form class="add-book">
+        <h2>Add a new book</h2>
+        <input required class="input" type="text" placeholder="title">
+        <input required class="input" type="text" placeholder="author">
+        <input required class="input" type="text" placeholder="isbn">
+        <input required class="input" type="text" placeholder="image url">
+        <input required class="input" type="textarea" placeholder="description">
+      </form>
     </section>
-    <form class="add-book">
-      <h2>Add a new book</h2>
-      <input required class="input" type="text" placeholder="title">
-      <input required class="input" type="text" placeholder="author">
-      <input required class="input" type="text" placeholder="isbn">
-      <input required class="input" type="text" placeholder="image url">
-      <input required class="input" type="textarea" placeholder="description">
-    </form>
+    
   </main>
   <footer class="footer theme">
     <aside class="social-links">
