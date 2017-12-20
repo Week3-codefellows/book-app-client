@@ -1,6 +1,4 @@
-'use strict'
-
-
+'use strict';
 
 (function(module) {
   const errorView = {}
