@@ -11,6 +11,31 @@ body {
     color: #bbb;
   }
 
+  nav {
+    text-decoration: none;
+  }
+
+  a {
+    color: #bbb;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  h2 {
+    color: #bbb;
+  }
+
+  .input {
+    width: 50%;
+  padding: 12px;
+  font-size: 18px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  margin-bottom: 40px;
+  }
+
   h1 {
       text-align: center;
       color: #bbb;
