@@ -15,30 +15,30 @@ var app = app || {};
 })(app)
 
 $(() => app.Book.fetchAll(app.bookView.initIndexPage))
-$(function() {
+// $(function() {
  
-  $('.container').hide()
-})
+//   $('.container').hide()
+// })
 
-function initHome() {
-  $('.container').hide()
-  $('#home').show()
-}
+// function initHome() {
+//   $('.container').hide()
+//   $('#home').show()
+// }
 
-function initOne(ctx) {
-  console.log('ctx', ctx)
-  $('.container').hide()
-  $('#one').show()
-}
+// function initOne(ctx) {
+//   console.log('ctx', ctx)
+//   $('.container').hide()
+//   $('#one').show()
+// }
 
-function initTwo(ctx) {
-  console.log('ctx', ctx)
-  $('.container').hide()
-  $('#two').show()
-}
+// function initTwo(ctx) {
+//   console.log('ctx', ctx)
+//   $('.container').hide()
+//   $('#two').show()
+// }
 
-function initThree(ctx) {
-  console.log('ctx', ctx)
-  $('.container').hide()
-  $('#three').show()
-}
+// function initThree(ctx) {
+//   console.log('ctx', ctx)
+//   $('.container').hide()
+//   $('#three').show()
+// }
