@@ -1,31 +1,33 @@
-'use strict';
+'use strict'
 
-var app = {};
-var __API_URL__ = 'http://localhost:3000';
-//var __API_URL__ = 'https://cs-ea-booklist.herokuapp.com/';
+var app = app || {};
 
 (function(module) {
-function Book(bookObject) {
-    Object.keys(bookObject).forEach(key => this[key] = bookObject[key]);
-};
+  var __API_URL__ = 'http://localhost:3000';
+  //var __API_URL__ = 'https://cs-ea-booklist.herokuapp.com/';
 
-Book.prototype.toHtml = function() {
-    return Handlebars.compile ($('#book-template').text())(this);
-};
+  function errorCallback(err) {
+    console.error(err)
+    module.errorView.initErrorPage(err)
+  }
 
-Book.all = {};
+  function Book(BookObj) {
+    Object.keys(BookObj).map(key => this[key] = BookObj[key])
+  }
 
-Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
+  Book.prototype.toHtml = function() {
+    // let template = Handlebars.compile($('#book-list-template').text())
+    // return template(this)
+    return Handlebars.compile($('#book-list-template').text())(this)
+  }
 
-Book.fetchall = callback =>
-    $.get(`${__API_URL__}/tasks`)
-        .then(Book.loadAll)
-        .then(callback)
-        .catch(errorCallback);
+  Book.all = []
+  Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
+  Book.fetchAll = callback =>
+    $.get(`${__API_URL__}/api/v1/books`)
+    .then(Book.loadAll)
+    .then(callback)
+    .catch(errorCallback)
 
-module.Book = Book;
-})(app);
-
-$(function() {
-    app.Book.fetchAll(app.bookView.initIndexPage);
-});
+  module.Book = Book
+})(app)
