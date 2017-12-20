@@ -1,0 +1,33 @@
+body {
+    background-color: #bbb;
+  }
+
+  header {
+      height: 200px;
+  }
+
+  footer {
+    height: 200px;
+    color: #bbb;
+  }
+
+  h1 {
+      text-align: center;
+      color: #bbb;
+  }
+
+  .main {
+    height: 800px;
+    background-image: url('images/bg.jpg')
+  }
+
+  .theme {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    background-color: #111;
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 10px 20px;
+  }
