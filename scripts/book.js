@@ -34,13 +34,14 @@ var app = app || {};
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
-console.log(Book.all);
-  
-Book.fetchOne = callback =>
-    $.get(`${__API_URL__}/api/v1/books/:id`)
-      .then(Book.loadAll)
-      .then(callback)
-      .catch(errorCallback);
 
+  }
+// Book.fetchOne = callback =>{
+//     $.get(`${__API_URL__}/api/v1/books/:id`)
+//       .then(Book.loadAll)
+//       .then(callback)
+//       .catch(errorCallback);
+
+// }
   module.Book = Book
 })(app)
