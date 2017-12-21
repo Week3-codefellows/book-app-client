@@ -32,7 +32,6 @@ var app = app || {};
         description: e.target.description.value,
       }
       app.Book.create(newBook);
-      console.log(newBook);
     })
   }
   module.bookView = bookView;
