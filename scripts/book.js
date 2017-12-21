@@ -37,15 +37,12 @@ var app = app || {};
 
   Book.create = newBook =>
     $.post(`${__API_URL__}/api/v1/books`, newBook)
-      .then(console.log('added book'))
-      .then(console.log(newBook))
       .catch(errorCallback);
   
-  Book.destroy = callback =>
-  $.get(`${__API_URL__}/api/v1/books`)
-  .then(console.log('destroy book'))
-  .catch(errorCallback);
-  
+  Book.destroy = (id, callback) =>
+    $.get(`${__API_URL__}/api/v1/books/delete/${id}`)
+      .then(callback)
+      .catch(errorCallback);
 
   module.Book = Book;
 })(app);
