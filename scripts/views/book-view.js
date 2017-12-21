@@ -35,6 +35,5 @@ var app = app || {};
       console.log(newBook);
     })
   }
-
   module.bookView = bookView;
 })(app)
