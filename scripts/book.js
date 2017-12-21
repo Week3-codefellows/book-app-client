@@ -4,44 +4,43 @@ var app = app || {};
 
 (function(module) {
 
-  // var __API_URL__ = 'http://localhost:3000';
-  var __API_URL__ = 'https://cs-ea-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
+  // __API_URL__ = 'https://cs-ea-booklist.herokuapp.com';
 
   function errorCallback(err) {
-    console.error(err)
-    module.errorView.initErrorPage(err)
+    console.error(err);
+    module.errorView.initErrorView(err);
   }
 
   function Book(BookObj) {
-    Object.keys(BookObj).map(key => this[key] = BookObj[key])
+    Object.keys(BookObj).map(key => this[key] = BookObj[key]);
   }
 
-  Book.prototype.toHtml = function() {
-    // let template = Handlebars.compile($('#book-list-template').text())
-    // return template(this)
-    return Handlebars.compile($('#book-list-template').text())(this)
+  Book.prototype.toHtml = function(templateId) {
+    return Handlebars.compile($(`#${templateId}`).text())(this);
   }
-  console.log( __API_URL__);
-  // debugger;
+
   Book.all = []
-  Book.loadAll = rows => {
-    Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
-    console.log(Book.all);
-  }
-  
-  Book.fetchAll = callback => {
+  Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
+
+  Book.fetchOne = (id, callback) =>
+    $.get(`${__API_URL__}/api/v1/books/${id}`)
+      .then(Book.loadAll)
+      .then(callback)
+      .catch(errorCallback);
+
+  Book.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
 
-  }
-// Book.fetchOne = callback =>{
-//     $.get(`${__API_URL__}/api/v1/books/:id`)
-//       .then(Book.loadAll)
-//       .then(callback)
-//       .catch(errorCallback);
+  Book.create = newBook =>
+    $.post(`${__API_URL__}/api/v1/books`, newBook)
+      .then(console.log('added book'))
+      .then(console.log(newBook))
+      .catch(errorCallback)
+  
 
-// }
-  module.Book = Book
-})(app)
+  module.Book = Book;
+})(app);
