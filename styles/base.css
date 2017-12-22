@@ -1,5 +1,6 @@
-body {
+html,body {
     background-color: #bbb;
+    color:gold;
   }
 
   header {
@@ -21,25 +22,35 @@ body {
     text-decoration: none;
   }
 
-  li {
+
+  form.create-book {
     list-style-type: none;
   }
 
+
   h2 {
+    text-align: center;
+    margin:auto;
     color: #bbb;
   }
 
   button {
+    margin-left:50%;
+    transform: translate(-50%);
+    display:block;
     font-size: 18px;
     background-color: #fff;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     border: none;
     border-radius: 10px;
   }
 
-  .input {
-    width: 50%;
+  .create-book .input {
+  
+  margin-left:50%;
+  transform: translate(-50%);
+  width: 50%;
   padding: 12px;
   font-size: 18px;
   box-sizing: border-box;
@@ -68,4 +79,23 @@ body {
     margin: 0 auto;
     border: 1px solid;
     padding: 10px 20px;
+  }
+
+  #detail-desc{
+    margin-left:50%;
+    transform: translate(-50%);
+  }
+
+  #book-list{
+    -webkit-appearance: none;
+    margin-left:50%;
+    transform: translate(-50%);
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 3%;
+    color: gold;
+    font-style: heavy;
+
   }
