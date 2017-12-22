@@ -20,13 +20,27 @@ var app = app || {};
     $('.delete-button').on('click', 'button', function() {
       module.Book.destroy($(this).data('bookid'))
     })
-    $('.update-button').on('click', 'button', function() {
-      let xx =  $('.book-container-detail').children('p.first');
-      console.log(xx)
-      $('.input-create').val('');
-    })
+ 
   }
+  bookView.initUpdatePage = function(){
+    $('.container').hide()
+    $('.update-book').show();
+    $('.update-button').on('click', 'button', function() {
+     
+      $(document).ready(function(){
+        let isbn = "{{isbn}}";
+        
+      
+        $("#isbn").text(isbn+''); 
+        
+      })
+  
+       $('#isbn').val('').replaceWith( $input );
+  
+  
+  })
 
+  }
   bookView.initFormPage = function() {
     $('.container').hide()
     $('.create-view').show();
