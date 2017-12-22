@@ -37,12 +37,26 @@ var app = app || {};
 
   Book.create = newBook =>
     $.post(`${__API_URL__}/api/v1/books`, newBook)
+      .then(() => page('/'))
       .catch(errorCallback);
+
+  Book.update = function(id) {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${id}`,
+      method: 'PUT',
+    })
+      .then(() => page('/'))
+      .catch(module.errorView.initErrorView)
+  }
   
-  Book.destroy = (id, callback) =>
-    $.get(`${__API_URL__}/api/v1/books/delete/${id}`)
-      .then(callback)
-      .catch(errorCallback);
+  Book.destroy = function(id) {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${id}`,
+      method: 'DELETE',
+    })
+      .then(() => page('/'))
+      .catch(module.errorView.initErrorView)
+  }
 
   module.Book = Book;
 })(app);

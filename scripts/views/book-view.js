@@ -17,12 +17,15 @@ var app = app || {};
     $('.detail-view').show()
     $('#detail-desc').empty()
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')));
+    $('.book-container').on('click', 'button', function() {
+      module.Book.destroy($(this).data('bookid'))
+    })
   }
 
   bookView.initFormPage = function() {
     $('.container').hide()
     $('.create-view').show();
-    $('.create-book').on('submit', function(e) {
+    $('.create-book').one('submit', function(e) {
       e.preventDefault();
       let newBook = {
         title: e.target.title.value,
@@ -32,6 +35,7 @@ var app = app || {};
         description: e.target.description.value,
       }
       app.Book.create(newBook);
+      $('.input-create').val('');
     })
   }
   module.bookView = bookView;
