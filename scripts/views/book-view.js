@@ -21,10 +21,15 @@ var app = app || {};
       module.Book.destroy($(this).data('bookid'))
     })
     $('.update-button').on('click', 'button', function() {
-      let xx =  $('.book-container-detail').children('p.first');
-      console.log(xx)
-      $('.input-create').val('');
+      module.Book.fetchOne($(this).data('bookid'), module.bookView.initUpdatePage)
     })
+  }
+
+  bookView.initUpdatePage = function() {
+    $('.container').hide()
+    $('.update-view').show()
+    $('#update-list').empty()
+    module.Book.all.map(book => $('#update-desc').append(book.toHtml('book-update-template')));
   }
 
   bookView.initFormPage = function() {
