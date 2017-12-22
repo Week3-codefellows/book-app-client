@@ -46,7 +46,7 @@ html,body {
     border-radius: 10px;
   }
 
-  .create-book .input {
+  .create-book .input-create {
   
   margin-left:50%;
   transform: translate(-50%);
