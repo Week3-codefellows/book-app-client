@@ -17,8 +17,13 @@ var app = app || {};
     $('.detail-view').show()
     $('#detail-desc').empty()
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')));
-    $('.book-container').on('click', 'button', function() {
+    $('.delete-button').on('click', 'button', function() {
       module.Book.destroy($(this).data('bookid'))
+    })
+    $('.update-button').on('click', 'button', function() {
+      let xx =  $('.book-container-detail').children('p.first');
+      console.log(xx)
+      $('.input-create').val('');
     })
   }
 
