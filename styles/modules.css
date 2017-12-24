@@ -1,0 +1,53 @@
+@media only screen and (max-width : 800px) {
+
+	header {
+
+    background-color: rgb(100, 98, 98);
+		position: absolute;
+
+	}
+
+	#menu-icon {
+    float:right;
+    display:inline-block;
+    width: 40px;
+	height: 40px;
+	background: #4C8FEC url(./styles/images/if_menu-alt_134216.png) center;
+
+	}
+
+	nav ul, nav:active ul { 
+
+    display: none;
+    float:right;
+		position: absolute;
+		padding: 20px;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+
+	}
+
+	nav li {
+
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+
+	}
+
+	nav:hover ul {
+
+		display: block;
+
+  }
+
+  a:hover#menu-icon {
+  
+    background-color: #444;
+    border-radius: 4px 4px 0 0;
+  
+  }
+}

@@ -20,7 +20,7 @@
         <div class="book-overlay">
           <h2 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{title}}</h2>
           <img src={{image_url}} style= "height:400px;margin-left: 50%; transform: translate(-50%);
-          ">
+          box-shadow: 10px 10px 7px;">
           <h3 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{author}}</h3>
         </div>
         <button type="button" id="bookid-{{book_id}}" style="display:block;"><a href="/books/{{book_id}} " style ="color:black; margin:auto;" >View Details</a></button>
@@ -30,11 +30,10 @@
   </script>
   <script type="text/x-handlebars-template" id="book-detail-template">
     <div class="book-container-detail">
-      <p style="-webkit-appearance:none; color:gainsboro; text-align:right;">{{isbn}}</p>
-      <img src="{{image_url}}" style= "height:400px;margin-left: 50%; transform: translate(-50%);
+      <h2 style="-webkit-appearance:none; color:gainsboro; text-align:left;">{{title}}</h2>  
+      <h3 style="-webkit-appearance:none; color:gainsboro; text-align:left;">{{author}} <p style="-webkit-appearance:none; color:gainsboro; text-align:right;">{{isbn}}</p></h3>
+      <img src="{{image_url}}" style= "height:400px;margin-left: 50%; transform: translate(-50%);box-shadow: 10px 10px 7px;
       ">
-      <h3 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{title}}</h3>
-      <h2 style="-webkit-appearance:none; color:gainsboro; text-align:left;">{{author}}</h2>
       <p>{{description}}</p>
       <!-- <button type="button" id="book-update-{{book_id}}"><a href="/books/{{book_id}}">Update</a></button> -->
       <span class="update-button">
@@ -63,10 +62,11 @@
 <body>
   <header class="theme">
     <div class="header-content">
-      <a href="/">img src="http:www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="home</a>
-      <h1>Really cool Books</h1>
+      <a href="/" img src="http:www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="home"></a>
+      <h1>Really Cool Books</h1>
     </div>
     <nav>
+        <a href="./styles/images/if_menu-alt_134216.png" id="menu-icon"></a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/books">Add A New Book</a></li>

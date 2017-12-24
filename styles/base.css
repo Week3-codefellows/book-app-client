@@ -5,7 +5,7 @@ html,body {
 
   header {
       height: 200px;
-      background-color: #000;
+     
   }
 
   footer {
@@ -22,6 +22,12 @@ html,body {
     text-decoration: none;
   }
 
+  form{
+    margin-left:50%;
+   transform: translate(-50%);
+    border: 5px solid gold;
+    width: 75%;
+  }
 
   form.create-book {
     list-style-type: none;
@@ -35,6 +41,7 @@ html,body {
   }
 
   button {
+   
     margin-left:50%;
     transform: translate(-50%);
     display:block;
@@ -75,7 +82,7 @@ html,body {
     display: flex;
     flex-direction: column;
     justify-content: column;
-    background-color: #111;
+    background-color: rgb(100, 98, 98);
     width: 800px;
     margin: 0 auto;
     border: 1px solid;
@@ -101,20 +108,39 @@ html,body {
      border: 5px solid gold;
      height:auto;
      margin-left:50%;
+     margin-bottom: 10px;
      transform: translate(-50%);
-     padding: 5px;
+     
    }
-
-  nav ul li {
-    display: inline-block;
-    margin: 3%;
-    color: gold;
-    font-style: heavy;
-
-  }
 
   footer ul li {
     list-style-type: none;
   }
 
+  nav ul li {
+
+    float: right;
+    padding: 20px;	
+    display: inline-block;
+    margin: 3%;
+    color: gold;
+    font-style: heavy;
+  
+  }
+  
+  #menu-icon {
+  
+    display: hidden;
+    width: 40px;
+    height: 40px;
+    background: #4C8FEC url(../styles/images/if_menu-alt_134216.png) center;
+  
+  }
+  
+  a:hover#menu-icon {
+  
+    background-color: #444;
+    border-radius: 4px 4px 0 0;
+  
+  }
   
