@@ -40,14 +40,15 @@ var app = app || {};
       .then(() => page('/'))
       .catch(errorCallback);
 
-  Book.update = function(id) {
+  Book.update = (book, id) =>
     $.ajax({
       url: `${__API_URL__}/api/v1/books/${id}`,
       method: 'PUT',
+      data: book,
     })
       .then(() => page('/'))
       .catch(module.errorView.initErrorView)
-  }
+  
   
   Book.destroy = function(id) {
     $.ajax({
