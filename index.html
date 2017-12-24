@@ -15,7 +15,7 @@
   </script>
 
   <script type="text/x-handlebars-template" id="book-list-template" >
-    <li class="book-item" data-bookid={{book_id}}>
+    <li class="book-item" data-bookid={{book_id}} style="">
       <div class="book-container">
         <div class="book-overlay">
           <h2 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{title}}</h2>
@@ -23,16 +23,18 @@
           ">
           <h3 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{author}}</h3>
         </div>
+        <button type="button" id="bookid-{{book_id}}" style="display:block;"><a href="/books/{{book_id}} " style ="color:black; margin:auto;" >View Details</a></button>
       </div>
     </li>
-    <button type="button" id="bookid-{{book_id}}" style="display:block;"><a href="/books/{{book_id}} " style ="color:black; margin:auto;" >View Details</a></button>
+   
   </script>
   <script type="text/x-handlebars-template" id="book-detail-template">
     <div class="book-container-detail">
-      <p>{{isbn}}</p>
-      <img src="{{image_url}}">
-      <h3>{{title}}</h3>
-      <h2>{{author}}</h2>
+      <p style="-webkit-appearance:none; color:gainsboro; text-align:right;">{{isbn}}</p>
+      <img src="{{image_url}}" style= "height:400px;margin-left: 50%; transform: translate(-50%);
+      ">
+      <h3 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{title}}</h3>
+      <h2 style="-webkit-appearance:none; color:gainsboro; text-align:left;">{{author}}</h2>
       <p>{{description}}</p>
       <!-- <button type="button" id="book-update-{{book_id}}"><a href="/books/{{book_id}}">Update</a></button> -->
       <span class="update-button">

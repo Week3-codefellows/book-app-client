@@ -39,6 +39,7 @@ html,body {
     transform: translate(-50%);
     display:block;
     font-size: 18px;
+    color:black;
     background-color: #fff;
     padding: 10px;
     margin-bottom: 5%;
@@ -90,7 +91,19 @@ html,body {
     -webkit-appearance: none;
     margin-left:50%;
     transform: translate(-50%);
+    width: 100%;
   }
+  #book-list li {
+
+    -webkit-appearance: none;
+    list-style-type: none;
+    list-style-position: inside;
+     border: 5px solid gold;
+     height:auto;
+     margin-left:50%;
+     transform: translate(-50%);
+     padding: 5px;
+   }
 
   nav ul li {
     display: inline-block;
@@ -99,3 +112,9 @@ html,body {
     font-style: heavy;
 
   }
+
+  footer ul li {
+    list-style-type: none;
+  }
+
+  
