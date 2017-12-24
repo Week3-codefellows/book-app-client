@@ -20,35 +20,11 @@ var app = app || {};
     $('.delete-button').on('click', 'button', function() {
       module.Book.destroy($(this).data('bookid'))
     })
-<<<<<<< HEAD
- 
-=======
     $('.update-button').on('click', 'button', function() {
       module.Book.fetchOne($(this).data('bookid'), module.bookView.initUpdatePage)
     })
->>>>>>> 6d77cb3e0da107a15e3a13c3151d24b546d0fc49
   }
-  bookView.initUpdatePage = function(){
-    $('.container').hide()
-    $('.update-book').show();
-    $('.update-button').on('click', 'button', function() {
-     
-      $(document).ready(function(){
-        let isbn = "{{isbn}}";
-        
-      
-        $("#isbn").text(isbn+''); 
-        
-      })
-  
-       $('#isbn').val('').replaceWith( $input );
-  
-  
-  })
 
-<<<<<<< HEAD
-  }
-=======
   bookView.initUpdatePage = function() {
     $('.container').hide()
     $('.update-view').show()
@@ -56,7 +32,6 @@ var app = app || {};
     module.Book.all.map(book => $('#update-desc').append(book.toHtml('book-update-template')));
   }
 
->>>>>>> 6d77cb3e0da107a15e3a13c3151d24b546d0fc49
   bookView.initFormPage = function() {
     $('.container').hide()
     $('.create-view').show();
