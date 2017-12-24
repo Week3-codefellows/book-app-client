@@ -1,5 +1,5 @@
 'use strict'
-
+let xx = ''
 var app = app || {};
 
 (function (module) {
@@ -28,8 +28,26 @@ var app = app || {};
   bookView.initUpdatePage = function() {
     $('.container').hide()
     $('.update-view').show()
-    $('#update-list').empty()
+    $('#update-desc').empty()
     module.Book.all.map(book => $('#update-desc').append(book.toHtml('book-update-template')));
+
+    $('.update-book').on('submit', function(e) {
+      e.preventDefault();
+
+      let book = {
+        id: e.target.id.value,
+        title: e.target.title.value,
+        author: e.target.author.value,
+        isbn: e.target.isbn.value,
+        image_url: e.target.image_url.value,
+        description: e.target.description.value,
+      };
+
+      console.log('title ' + e.target.title.value)
+      
+      console.log('id ' + e.target.id.value)
+      module.Book.update(book, e.target.id.value);
+    })
   }
 
   bookView.initFormPage = function() {
@@ -37,6 +55,7 @@ var app = app || {};
     $('.create-view').show();
     $('.create-book').one('submit', function(e) {
       e.preventDefault();
+      console.log('hello2 ' + e)
       let newBook = {
         title: e.target.title.value,
         author: e.target.author.value,
