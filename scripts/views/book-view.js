@@ -1,5 +1,5 @@
 'use strict'
-let xx = ''
+
 var app = app || {};
 
 (function (module) {
@@ -42,10 +42,6 @@ var app = app || {};
         image_url: e.target.image_url.value,
         description: e.target.description.value,
       };
-
-      console.log('title ' + e.target.title.value)
-      
-      console.log('id ' + e.target.id.value)
       module.Book.update(book, e.target.id.value);
     })
   }
@@ -55,7 +51,7 @@ var app = app || {};
     $('.create-view').show();
     $('.create-book').one('submit', function(e) {
       e.preventDefault();
-      console.log('hello2 ' + e)
+    
       let newBook = {
         title: e.target.title.value,
         author: e.target.author.value,
