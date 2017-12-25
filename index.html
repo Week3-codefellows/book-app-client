@@ -15,7 +15,7 @@
   </script>
 
   <script type="text/x-handlebars-template" id="book-list-template" >
-    <li class="book-item" data-bookid={{book_id}} style="">
+    <li class="book-item" data-bookid={{book_id}}>
       <div class="book-container">
         <div class="book-overlay">
           <h2 style="-webkit-appearance:none; color:gainsboro; text-align:center;">{{title}}</h2>
@@ -35,11 +35,9 @@
       <img src="{{image_url}}" style= "height:400px;margin-left: 50%; transform: translate(-50%);box-shadow: 10px 10px 7px;
       ">
       <p>{{description}}</p>
-      <!-- <button type="button" id="book-update-{{book_id}}"><a href="/books/{{book_id}}">Update</a></button> -->
       <span class="update-button">
       <button type="button" data-bookid={{book_id}}>Update</button>
       </span>
-      <!-- <button type="button" id="book-delete-{{book_id}}"><a href="/books/delete/{{book_id}}">Delete</a></button> -->
       <span class="delete-button">
        <button type="button" data-bookid={{book_id}} id="delete-it">Delete</button>
         </span>
