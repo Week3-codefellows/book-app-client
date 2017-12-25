@@ -158,6 +158,11 @@ html,body {
   .expand {
     display: block !important; 
   }
+
+  .input-update-id {
+    display: none;
+  }
+
   /* #menu-icon {
   
     display: hidden;

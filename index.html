@@ -47,14 +47,17 @@
   </script>
   <script type="text/x-handlebars-template" id="book-update-template">
     <div class="book-container-update">
+        <form class="update-book">
         <input name="title" value="{{title}}" required class="input-create" type="text" placeholder="title">
         <input name="author" value="{{author}}" required class="input-update" type="text" placeholder="author">
         <input name="isbn" value="{{isbn}}" required class="input-update-isbn" type="text" placeholder="isbn">
         <input name="image_url" value="{{image_url}}" required class="input-update" type="text" placeholder="image url">
-        <input name="description" value="{{description}}" required class="input-update" type="textarea" placeholder="description">
-      <span class="update-button">
-      <button type="button" data-bookid={{book_id}}>Update Book</button>
+        <input name="description" value="{{description}}" required class="input-update-text" type="textarea" placeholder="description">
+        <input name="id" value="{{book_id}}" class="input-update-id" type="textarea" placeholder="id">
+      <span class="update-book-button">
+      <button name='xxx' type="submit" updatebookid={{book_id}}>Update Book</button>
       </span>
+      </form>
     </div>
   </script>
 
