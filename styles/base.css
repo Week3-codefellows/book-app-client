@@ -5,7 +5,7 @@ html,body {
 
   header {
       height: 200px;
-      background-color: #000;
+     
   }
 
   footer {
@@ -18,10 +18,17 @@ html,body {
   }
 
   a {
-    color: #bbb;
+    color:gold;
+    font:bold;
     text-decoration: none;
   }
 
+  form{
+    margin-left:50%;
+   transform: translate(-50%);
+    border: 5px solid gold;
+    width: 75%;
+  }
 
   form.create-book {
     list-style-type: none;
@@ -35,10 +42,12 @@ html,body {
   }
 
   button {
+   
     margin-left:50%;
     transform: translate(-50%);
     display:block;
     font-size: 18px;
+    color:black;
     background-color: #fff;
     padding: 10px;
     margin-bottom: 5%;
@@ -74,7 +83,7 @@ html,body {
     display: flex;
     flex-direction: column;
     justify-content: column;
-    background-color: #111;
+    background-color: rgb(100, 98, 98);
     width: 800px;
     margin: 0 auto;
     border: 1px solid;
@@ -90,12 +99,73 @@ html,body {
     -webkit-appearance: none;
     margin-left:50%;
     transform: translate(-50%);
+    width: 100%;
+  }
+  #book-list li {
+
+    -webkit-appearance: none;
+    list-style-type: none;
+    list-style-position: inside;
+     border: 5px solid gold;
+     height:auto;
+     margin-left:50%;
+     margin-bottom: 10px;
+     transform: translate(-50%);
+     
+   }
+
+  footer ul li {
+    list-style-type: none;
   }
 
   nav ul li {
+
+    float: right;
+    padding: 20px;	
     display: inline-block;
     margin: 3%;
     color: gold;
     font-style: heavy;
-
+  
   }
+  
+  .menu-btn div {
+    position: absolute;
+    left: 100%;
+    top: 64%;
+    padding-right: 8px;
+    margin-top: -0.50em;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 200;
+    vertical-align: middle;
+    z-index: 99;
+  }
+   
+  .menu-btn span {
+    display: block;
+    width: 19px;
+    height: 3px;
+    margin: 4px 0;
+    background: rgb(0,0,0);
+    z-index: 99;
+  }
+   
+  .responsive-menu{
+    display: none;
+  }
+   
+  .expand {
+    display: block !important; 
+  }
+  /* #menu-icon {
+  
+    display: hidden;
+    width: 40px;
+    height: 40px;
+    background: #4C8FEC url(../styles/images/if_menu-alt_134216.png) center;
+  
+  }
+   */
+
+  
