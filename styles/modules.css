@@ -1,4 +1,4 @@
-@media only screen and (max-width : 800px) {
+/* @media only screen and (min-width : 801px) {
 
 	header {
 
@@ -7,12 +7,12 @@
 
 	}
 
-	#menu-icon {
+a	#menu{
     float:right;
     display:inline-block;
     width: 40px;
 	height: 40px;
-	background: #4C8FEC url(./styles/images/if_menu-alt_134216.png) center;
+	background: url(./styles/images/if_menu-alt_134216.png) center;
 
 	}
 
@@ -50,4 +50,5 @@
     border-radius: 4px 4px 0 0;
   
   }
-}
+} */
+
